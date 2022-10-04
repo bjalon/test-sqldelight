@@ -1,0 +1,6 @@
+CREATE VIRTUAL TABLE NoteFts USING fts5 (
+  title TEXT NOT NULL, description TEXT NOT NULL
+);
+
+searchBlob:
+    SELECT * FROM NoteFts WHERE NoteFts MATCH :searchText;
